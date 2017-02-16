@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Checkout</title><br><br>
+</head>
+<body bgcolor="#99FF66" text="#003300">
+<h2 align="center">Checkout</h2>
+    
+    <table border="0" align="center" >
+        <tr><td>
+            <form name="form" method="post" action="javascript:(0);">
+            <input type="text" value="0" name="txtP" size="7">Product Price<br><br>
+            <input type="text" value="0" name="txtT" size="7">Total Tax in Dollars<br><br>
+            <input type="text" value="0" name="txtC" size="7">Total Cost of the product<br><br>
+            <input type="button" value="Calculate My Total" name="btnSubmit" onClick="calcVB()"><br><br>
+                </table></tr></td>
+    </form>
+    <script language="vbscript">
+    function calcVB()
+        dim price, tax, total, cost price = document.form.txtP.value
+        tax = getTaxVB()
+        total = (price * tax)
+        document.form.txtT.value = formatCurrency(total)
+        cost = price + total
+        document.form.txtC.value = formatCurrency(cost)
+    
+    </script>
+    </body></html>
+    
